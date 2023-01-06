@@ -1,51 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './timeLine.scss';
 
-const TimeLine = () => (
+const TimeLine = ({ timeLines }) => (
   <div id="timeLine">
     <div className="container">
-      <div className="wrapper">
-        <div className="dot" />
-        <div className="timeLineCard">
-          <h3>Title</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consecteturadipisicing elit. Ullam
-            debitis quia ut, fugiat quidem quisquam.
-          </p>
+      {timeLines && timeLines.map((timeLine) => (
+        <div key={timeLine.title} className="wrapper">
+          <div className="dot" />
+          <div className="timeLineCard">
+            <h3>{timeLine.title}</h3>
+            <p>{timeLine.period}</p>
+          </div>
         </div>
-      </div>
-      <div className="wrapper">
-        <div className="dot" />
-        <div className="timeLineCard">
-          <h3>Title</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consecteturadipisicing
-          </p>
-        </div>
-      </div>
-      <div className="wrapper">
-        <div className="dot" />
-        <div className="timeLineCard">
-          <h3>Title</h3>
-          <p>
-            Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-      </div>
-      <div className="wrapper">
-        <div className="dot" />
-        <div className="timeLineCard">
-          <h3>Title</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio beatae praesentium
-            quas doloremque ipsam? A nihil impedit iste maiores laborum! Animi culpa magni
-            quas consequatur!
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 );
+
+TimeLine.propTypes = {
+  timeLines: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+};
 
 export default TimeLine;

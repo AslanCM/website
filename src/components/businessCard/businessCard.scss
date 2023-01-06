@@ -1,11 +1,15 @@
 #businessCard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   background-color: #ABB0CC;
 
   .card {
     padding: 0 20px;
     text-align: left;
+
+    &:last-child {
+      width: 90%;
+    }
 
     .wrapper {
       display: flex;
@@ -44,10 +48,12 @@
 
 @media (max-width: 320px) {
   #businessCard {
-    align-items: center;
-    justify-items: center;
-
     .card {
+
+      &:last-child {
+        width: 70%;
+        padding-right: 0;
+      }
       .wrapper {
         flex-direction: column;
 

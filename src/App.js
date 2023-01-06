@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/navbar';
 
+import timeLines from './constants/timelines';
 import NAVIGABLES from './constants/navigable';
 
 import TimeLine from './components/timeLine';
@@ -15,7 +16,7 @@ function App() {
         titles={NAVIGABLES}
       />
       <BusinessCard />
-      <TimeLine />
+      <TimeLine timeLines={timeLines} />
     </div>
   );
 }
