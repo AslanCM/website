@@ -1,0 +1,44 @@
+#businessCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  background-color: #ABB0CC;
+
+  .card {
+    width: 50%;
+    padding: 0 20px;
+    text-align: left;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+
+      .imageWrapper {
+        margin: 40px 0;
+  
+        min-width: 200px;
+        min-height: 200px;
+        rotate: -90deg;
+        border-radius: 50%;
+  
+        background-position-x: -50px;
+        background-image: url(../../public/images/trabajoimg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .textWrapper {
+        margin-left: 24px;
+        width: 90%;
+      } 
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  #businessCard {
+    .card {
+      width: fit-content;
+    }
+  }
+}
