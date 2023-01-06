@@ -1,10 +1,9 @@
 #businessCard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
   background-color: #ABB0CC;
 
   .card {
-    width: 50%;
     padding: 0 20px;
     text-align: left;
 
@@ -35,10 +34,28 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 920px) {
   #businessCard {
     .card {
       width: fit-content;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #businessCard {
+    align-items: center;
+    justify-items: center;
+
+    .card {
+      .wrapper {
+        flex-direction: column;
+
+        .textWrapper {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
     }
   }
 }

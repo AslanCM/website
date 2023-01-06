@@ -3,8 +3,10 @@ import NavBar from './components/navbar';
 
 import NAVIGABLES from './constants/navigable';
 
-import './App.css';
+import TimeLine from './components/timeLine';
 import BusinessCard from './components/businessCard';
+
+import './App.css';
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         titles={NAVIGABLES}
       />
       <BusinessCard />
+      <TimeLine />
     </div>
   );
 }
